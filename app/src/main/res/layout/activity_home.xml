@@ -29,11 +29,11 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/share_tech_mono"
             android:gravity="center_horizontal"
-            android:text="Time Mode"
-            android:textColor="@color/colorPrimary"
-            android:textSize="25sp" />
+            android:text="@string/time_mode_button_display_text"
+            android:textSize="25sp"
+            android:fontFamily="@font/share_tech_mono"
+            android:textColor="@color/colorPrimary" />
 
         <ImageButton
             android:id="@+id/Date_Mode_Button"
@@ -49,10 +49,10 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/share_tech_mono"
             android:gravity="center_horizontal"
-            android:text="Date Mode"
+            android:text="@string/date_mode_button_display_text"
             android:textSize="25sp"
+            android:fontFamily="@font/share_tech_mono"
             android:textColor="@color/colorPrimary" />
 
         <ImageButton
@@ -69,11 +69,11 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/share_tech_mono"
             android:gravity="center_horizontal"
-            android:text="Countdown Mode"
+            android:text="@string/countdown_mode_button_display_text"
             android:textSize="25sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/share_tech_mono"
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
