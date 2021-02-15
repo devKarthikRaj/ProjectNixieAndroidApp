@@ -15,65 +15,160 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-29dp">
 
-        <ImageButton
-            android:id="@+id/Time_Mode_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounded_dotted_square"
-            android:contentDescription="@string/time_mode_button_desc"
-            android:src="@drawable/time_mode_logo"
-            android:layout_marginTop="25dp" />
-
-        <TextView
-            android:id="@+id/textView2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/time_mode_button_display_text"
-            android:textSize="25sp"
-            android:fontFamily="@font/share_tech_mono"
-            android:textColor="@color/colorPrimary" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="-40dp">
 
-        <ImageButton
-            android:id="@+id/Date_Mode_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounded_dotted_square"
-            android:contentDescription="@string/date_mode_button_desc"
-            android:src="@drawable/date_mode_logo"
-            android:layout_marginTop="30dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginEnd="50dp">
 
-        <TextView
-            android:id="@+id/textView3"
+                <ImageButton
+                    android:id="@+id/Button_Time_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_dotted_square"
+                    android:contentDescription="@string/time_mode_button_desc"
+                    android:src="@drawable/time_mode_logo" />
+
+                <TextView
+                    android:id="@+id/TV_Time_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:text="@string/time_mode_button_display_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/Button_Date_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_dotted_square"
+                    android:contentDescription="@string/date_mode_button_desc"
+                    android:src="@drawable/date_mode_logo" />
+
+                <TextView
+                    android:id="@+id/TV_Date_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:text="@string/date_mode_button_display_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/date_mode_button_display_text"
-            android:textSize="25sp"
-            android:fontFamily="@font/share_tech_mono"
-            android:textColor="@color/colorPrimary" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-        <ImageButton
-            android:id="@+id/Countdown_Mode_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounded_dotted_square"
-            android:contentDescription="@string/countdown_mode_button_desc"
-            android:src="@drawable/countdown_mode_logo"
-            android:layout_marginTop="30dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginEnd="50dp">
 
-        <TextView
-            android:id="@+id/textView4"
+                <ImageButton
+                    android:id="@+id/Button_Countdown_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_dotted_square"
+                    android:contentDescription="@string/countdown_mode_button_desc"
+                    android:src="@drawable/countdown_mode_logo" />
+
+                <TextView
+                    android:id="@+id/TV_Countdown_Mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:gravity="center_horizontal"
+                    android:text="@string/countdown_mode_button_display_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/Button_LED_Control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_dotted_square"
+                    android:contentDescription="@string/led_control_button_desc"
+                    android:src="@drawable/led_logo" />
+
+                <TextView
+                    android:id="@+id/TV_LED_Control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/led_control_button_display_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/countdown_mode_button_display_text"
-            android:textSize="25sp"
-            android:layout_marginBottom="50dp"
-            android:fontFamily="@font/share_tech_mono"
-            android:textColor="@color/colorPrimary" />
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/Button_Status_Monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_dotted_square"
+                    android:contentDescription="@string/status_monitor_button_desc"
+                    android:src="@drawable/settings_logo" />
+
+                <TextView
+                    android:id="@+id/TV_Status_Monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:text="@string/status_monitor_button_display_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimeMode">
+    tools:context=".TimeMode"
+    android:background="#263238">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/TV_Time_Mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/share_tech_mono"
+            android:text="@string/time_mode_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="50sp"
+            android:textStyle="bold"/>
+
+        <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/TV_Set_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/share_tech_mono"
+            android:text="@string/set_time_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/Button_Manual_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="75dp"
+                    android:background="@drawable/rounded_dotted_square_for_mode_activities"
+                    app:srcCompat="@drawable/manual_logo"
+                    android:contentDescription="@string/manual_time_button_desc"/>
+
+                <ImageButton
+                    android:id="@+id/Button_System_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_dotted_square_for_mode_activities"
+                    app:srcCompat="@drawable/system_logo"
+                    android:contentDescription="@string/system_time_button_desc"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                android:id="@+id/TV_Manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:fontFamily="@font/share_tech_mono"
+                android:text="@string/manual_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/TV_System"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/share_tech_mono"
+                    android:text="@string/system_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:layout_marginStart="110dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/TV_Time_Display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/orbitron"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="60sp"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/Button_Sync_With_Nixie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sync_button_display_text"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:fontFamily="@font/share_tech_mono"
+            android:textStyle="bold"
+            android:contentDescription="@string/display_on_nixie_button_desc"/>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

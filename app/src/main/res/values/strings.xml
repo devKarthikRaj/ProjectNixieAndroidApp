@@ -1,9 +1,34 @@
 <resources>
-    <string name="app_name">Nixie Control</string>
+    <string name="app_name">Nixie</string>
     <string name="time_mode_button_desc">Pressing this button will lead to the Time Mode Activity</string>
     <string name="date_mode_button_desc">Pressing this button will lead to the Date Mode Activity</string>
-    <string name="countdown_mode_button_desc">Pressing this Button will lead to the Countdown Mode Activity</string>
-    <string name="time_mode_button_display_text">Time Mode</string>
-    <string name="date_mode_button_display_text">Date Mode</string>
-    <string name="countdown_mode_button_display_text">Countdown Mode</string>
+    <string name="countdown_mode_button_desc">Pressing this button will lead to the Countdown Mode Activity</string>
+    <string name="led_control_button_desc">Pressing this button will lead to the LED Control Activity</string>
+    <string name="status_monitor_button_desc">Pressing this button will lead to the Status Monitor Activity</string>
+
+    <string name="time_mode_button_display_text">Time</string>
+    <string name="date_mode_button_display_text">Date</string>
+    <string name="countdown_mode_button_display_text">Countdown</string>
+    <string name="led_control_button_display_text">LED</string>
+    <string name="status_monitor_button_display_text">Status Monitor</string>
+
+    <string name="manual_time_button_desc">Pressing this button will lead to a timepicker fragment to select time</string>
+    <string name="system_time_button_desc">Pressing this button will fetch the current android system time</string>
+    <string name="display_on_nixie_button_desc">Pressing this button will update the nixie hardware with time/date chosen</string>
+
+    <string name="time_mode_text">Time Mode</string>
+    <string name="date_mode_text">Date Mode</string>
+    <string name="countdown_mode_text">Countdown Mode</string>
+    <string name="led_control_text">LED Control</string>
+    <string name="status_monitor_text">Status Monitor</string>
+
+    <string name="set_time_text">Set Time</string>
+    <string name="set_date_text">Set Date</string>
+
+    <string name="manual_text">Manual</string>
+    <string name="system_text">System</string>
+    <string name="sync_button_display_text">Display on Nixie</string>
+
+    <string name="time_display_initial_text">00:00:00</string>
+
 </resources>
