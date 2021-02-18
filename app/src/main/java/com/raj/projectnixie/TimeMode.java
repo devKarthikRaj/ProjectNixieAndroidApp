@@ -25,6 +25,8 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
     int setMin;
     int setSec;
 
+    GetModifiedSystemTime getModifiedSystemTime = new GetModifiedSystemTime();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.Button_Manual_Time:
                 //Configure and Initialize TimePicker
@@ -53,30 +56,33 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
                         .build();
 
                 materialTimePicker.show(getSupportFragmentManager(), TAG);
+
+                //OnClickListeners for various TimePicker buttons
+                materialTimePicker.addOnPositiveButtonClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        String displayTimeString = getTimeFromTimePicker();
+                        Log.d(TAG,"Time Picked Through TimePicker Fragment");
+                        timeDisplayTV.setText(displayTimeString);
+                    }
+                });
+
+                materialTimePicker.addOnNegativeButtonClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Log.d(TAG, "Time Not Picked, TimePicker Fragment Dismissed");
+                        timeDisplayTV.setText(R.string.time_display_initial_text);
+                    }
+                });
                 break;
+
             case R.id.Button_System_Time:
-                getSystemTime();
+                String displayTimeString = getSystemTime();
+                timeDisplayTV.setText(displayTimeString);
                 break;
         }
-
-        //OnClickListeners for various TimePicker buttons
-        materialTimePicker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String displayTimeString = getTimeFromTimePicker();
-                Log.d(TAG,"Time Picked Through TimePicker Fragment");
-                timeDisplayTV.setText(displayTimeString);
-            }
-        });
-
-        materialTimePicker.addOnNegativeButtonClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.d(TAG, "Time Not Picked, TimePicker Fragment Dismissed");
-                timeDisplayTV.setText(R.string.time_display_initial_text);
-            }
-        });
     }
 
-    //This method gets the time from the TimePicker and formats it for further use
+    //This method gets the time from the TimePicker and formats it for further use.
+    // The method also updates the setHour, setMin, setSec variables with the current time... These variables will be sent to the hardware
     public String getTimeFromTimePicker() {
         //Get the picked time from TimePicker
         int pickedHour = materialTimePicker.getHour();
@@ -104,7 +110,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
         }
 
         //Put together the formatted time string:
-        String formattedTimeString = formattedHourString + ":" + formattedMinString + ":" + formattedSecString;
+        String formattedManualTimeString = formattedHourString + ":" + formattedMinString + ":" + formattedSecString;
 
         //Pass time in int format to public variables to be sent to bluetooth write thread
         setHour = pickedHour;
@@ -112,9 +118,20 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
         setSec = preSelectedSecond;
 
         //Return formattedTimeSring to be displayed in UI
-        return formattedTimeString;
+        return formattedManualTimeString;
     }
 
-    public void getSystemTime() {
+    public String getSystemTime() {
+
+        //For Min
+        String stringMin = getModifiedSystemTime.getCurrentSysMin();
+        setMin = Integer.parseInt(stringMin);
+
+        //For Hour
+        String stringHour = getModifiedSystemTime.getCurrentSysHour();
+        setHour = Integer.parseInt(stringHour);
+
+        String formattedSysTimeString = setHour + ":" + setMin + ":" + "00";
+        return formattedSysTimeString;
     }
 }
