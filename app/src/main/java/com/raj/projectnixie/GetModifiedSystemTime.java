@@ -26,6 +26,21 @@ class GetModifiedSystemTime {
         // MM/dd/yyyy HH:mm > Hours are in position 11 and 12
         return Character.toString(stringASCIIDate.charAt(11)) + Character.toString(stringASCIIDate.charAt(12));
     }
+
+    String getCurrentDay() {
+        // MM/dd/yyyy HH:mm > Days are in position 3 and 4
+        return Character.toString(stringASCIIDate.charAt(3)) + Character.toString(stringASCIIDate.charAt(4));
+    }
+
+    String getCurrentMonth() {
+        // MM/dd/yyyy HH:mm > Month are in position 0 and 1
+        return Character.toString(stringASCIIDate.charAt(0)) + Character.toString(stringASCIIDate.charAt(1));
+    }
+    String getCurrentYear() {
+        // MM/dd/yyyy HH:mm > Years are in position 6, 7, 8 & 9
+        return Character.toString(stringASCIIDate.charAt(6)) + Character.toString(stringASCIIDate.charAt(7)) + Character.toString(stringASCIIDate.charAt(8)) + Character.toString(stringASCIIDate.charAt(9));
+    }
+
 }
 
 

@@ -13,10 +13,6 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".StatusMonitor"></activity>
         <activity android:name=".LedControl" />
-        <activity android:name=".DateSetTimezone" />
-        <activity android:name=".DateSetManual" />
-        <activity android:name=".TimeSetTimezone" />
-        <activity android:name=".TimeSetManual" />
         <activity android:name=".CountdownMode" />
         <activity android:name=".DateMode" />
         <activity android:name=".TimeMode" />

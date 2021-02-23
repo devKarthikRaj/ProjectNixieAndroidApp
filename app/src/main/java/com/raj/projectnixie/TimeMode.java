@@ -81,8 +81,8 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    //This method gets the time from the TimePicker and formats it for further use.
-    // The method also updates the setHour, setMin, setSec variables with the current time... These variables will be sent to the hardware
+    //This method gets the time from the TimePicker and formats it for further use
+    //The method also updates the setHour, setMin, setSec variables with the current time... These variables will be sent to the hardware
     public String getTimeFromTimePicker() {
         //Get the picked time from TimePicker
         int pickedHour = materialTimePicker.getHour();
@@ -131,7 +131,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
         String stringHour = getModifiedSystemTime.getCurrentSysHour();
         setHour = Integer.parseInt(stringHour);
 
-        String formattedSysTimeString = setHour + ":" + setMin + ":" + "00";
-        return formattedSysTimeString;
+        //Format the string to be displayed to the user
+        return setHour + ":" + setMin + ":" + "00";
     }
 }
