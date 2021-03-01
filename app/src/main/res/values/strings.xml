@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Nixie</string>
+
+    <string name="connect_to_nixie_text">Connect to your Nixie Clock</string>
+    <string name="bt_status_monitor">Ready to connect to remote device&#8230;</string>
+    <string name="btn_list_paired_devices_text">List Paired Devices</string>
+    <string name="btn_goto_bt_settings_text">Pair New Devices</string>
+    <string name="btn_disconnect_text">Disconnect from remote device</string>
+    <string name="connected_to_text">Connected to</string>
+    <string name="remote_device_name">%1$s</string>
+    <string name="remote_device_address">%1$s</string>
+    <string name="disconnected_text">Disconnected from remote device</string>
+
     <string name="time_mode_button_desc">Pressing this button will lead to the Time Mode Activity</string>
     <string name="date_mode_button_desc">Pressing this button will lead to the Date Mode Activity</string>
     <string name="countdown_mode_button_desc">Pressing this button will lead to the Countdown Mode Activity</string>

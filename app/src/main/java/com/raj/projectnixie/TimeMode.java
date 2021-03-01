@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
 
     ImageButton manualTimeBtn;
     ImageButton systemTimeBtn;
+    Button dispOnNixieBtn;
 
     TextView timeDisplayTV;
 
@@ -34,6 +36,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
 
         manualTimeBtn = findViewById(R.id.Button_Manual_Time);
         systemTimeBtn = findViewById(R.id.Button_System_Time);
+        dispOnNixieBtn = findViewById(R.id.Button_Sync_With_Nixie);
         timeDisplayTV = findViewById(R.id.TV_Time_Display);
 
         manualTimeBtn.setOnClickListener(this);
@@ -51,7 +54,7 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
                 materialTimePicker = new MaterialTimePicker.Builder()
                         .setTimeFormat(TimeFormat.CLOCK_12H)
                         .setHour(12)
-                        .setMinute(00)
+                        .setMinute(0)
                         .setTitleText("Select Time to Display on Nixie")
                         .build();
 
@@ -77,6 +80,10 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
             case R.id.Button_System_Time:
                 String displayTimeString = getSystemTime();
                 timeDisplayTV.setText(displayTimeString);
+                break;
+
+            case R.id.Button_Sync_With_Nixie:
+                //Write setHour, setMin, setSec to Bluetooth
                 break;
         }
     }
@@ -121,15 +128,23 @@ public class TimeMode extends AppCompatActivity implements View.OnClickListener 
         return formattedManualTimeString;
     }
 
+    //This method gets the android system's time
+    //The method also updates the setHour, setMin, setSec variables with the current time... These variables will be sent to the hardware
     public String getSystemTime() {
-
-        //For Min
-        String stringMin = getModifiedSystemTime.getCurrentSysMin();
-        setMin = Integer.parseInt(stringMin);
 
         //For Hour
         String stringHour = getModifiedSystemTime.getCurrentSysHour();
+        //Pass the system hour to the public variables to be sent to bluetooth write thread
         setHour = Integer.parseInt(stringHour);
+
+        //For Min
+        String stringMin = getModifiedSystemTime.getCurrentSysMin();
+        //Pass the system min to the public variables to be sent to bluetooth write thread
+        setMin = Integer.parseInt(stringMin);
+
+        //For Second
+        //Pass the system sec to the public variables to be sent to bluetooth write thread
+        setSec = 0;
 
         //Format the string to be displayed to the user
         return setHour + ":" + setMin + ":" + "00";
